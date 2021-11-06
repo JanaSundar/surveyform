@@ -18,7 +18,7 @@ interface Survey {
 }
 
 interface SurveyState {
-    survey: Survey[];
+    surveys: Survey[];
     addSurvey: (survey: Survey) => void;
     removeSurvey: (id: string) => void;
 }
