@@ -11,6 +11,8 @@
     "pre-commit": "yarn lint --fix && git add ."
   },
   "dependencies": {
+    "@fontsource/inter": "^4.5.0",
+    "@fontsource/nunito": "^4.5.0",
     "@stitches/react": "^1.2.5",
     "axios": "^0.24.0",
     "framer-motion": "^5.0.0",
