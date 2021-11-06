@@ -2,36 +2,36 @@ import create from 'zustand';
 import type { SurveyState } from '@/types/Survey.types';
 
 export const useStore = create<SurveyState>((set) => ({
-    survey: [],
+    surveys: [],
     addSurvey: (survey) => {
         set((state) => {
 
-            const surveyIndex = state.survey.findIndex(
+            const existingSurveyIndex = state.surveys.findIndex(
                 (prev) => prev.id === survey.id
             );
 
-            if (surveyIndex >= 0) {
+            if (existingSurveyIndex >= 0) {
                 const updatedSurvey = {
-                    ...state.survey[surveyIndex],
-                    survey,
+                    ...state.surveys[existingSurveyIndex],
+                    ...survey,
                 };
 
-                const clonedSurvey = [...state.survey ]
-                clonedSurvey.splice(surveyIndex, 1, updatedSurvey);
+                const clonedSurveys = [...state.surveys];
+                clonedSurveys.splice(existingSurveyIndex, 1, updatedSurvey);
 
                 return {
-                    survey: clonedSurvey,
+                    surveys: clonedSurveys,
                 };
             }
 
             return {
-                survey: [...state.survey, survey],
+                surveys: [...state.surveys, survey],
             };
         });
     },
     removeSurvey: (id) => {
         set(state=>({
-            survey: state.survey.filter(prev => prev.id !== id),
+            surveys: state.surveys.filter(prev => prev.id !== id),
         }))
     },
 }));
