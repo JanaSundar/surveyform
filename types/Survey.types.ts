@@ -1,4 +1,5 @@
 enum SurveyType {
+    'Select',
     'Text',
     'Radio',
     'Checkbox',
