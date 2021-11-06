@@ -1,25 +1,19 @@
 {
     "compilerOptions": {
+        "target": "ES2019",
+        "lib": ["dom", "dom.iterable", "esnext"],
         "allowJs": true,
-        "allowUnreachableCode": false,
-        "allowUnusedLabels": false,
-        "declaration": true,
-        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": true,
         "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "incremental": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
         "isolatedModules": true,
         "jsx": "preserve",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noEmit": true,
-        "noFallthroughCasesInSwitch": true,
-        "noImplicitReturns": true,
-        "pretty": true,
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "strict": true,
-        "target": "es2018",
         "baseUrl": ".",
         "paths": {
             "@/components/*": ["components/*"],
@@ -32,5 +26,5 @@
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "dist", ".next", "next.config.js"]
 }

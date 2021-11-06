@@ -1,5 +1,5 @@
 import create from 'zustand';
-import type { SurveyState } from '@/types/Survey.types';
+import type { SurveyState } from '@/types/SurveyStore.types';
 
 export const useStore = create<SurveyState>((set) => ({
     surveys: [],
