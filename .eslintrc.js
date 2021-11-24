@@ -9,6 +9,9 @@ module.exports = {
         'airbnb',
         'prettier',
         'plugin:@next/next/recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -30,11 +33,32 @@ module.exports = {
                 extensions: ['.js', '.jsx', '.tsx', '.ts'],
             },
         ],
-        'import/no-unresolved': [2, { caseSensitive: false }],
+        'import/no-unresolved': 'error',
+        'import/extensions': [
+            'error',
+            'ignorePackages',
+            {
+                js: 'never',
+                jsx: 'never',
+                ts: 'never',
+                tsx: 'never',
+            },
+        ],
+        'import/no-extraneous-dependencies': [
+            'error',
+            { devDependencies: true },
+        ],
     },
     settings: {
         react: {
             version: 'detect',
         },
+        'import/resolver': {
+            typescript: {
+                alwaysTryTypes: true,
+                project: './tsconfig.json',
+            },
+        },
+        'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
     },
 };
